@@ -10,8 +10,8 @@ let nodeConfig = {
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-        user: ENV.EMAIL, // generated ethereal user
-        pass: ENV.PASSWORD, // generated ethereal password
+        user: process.env.EMAIL, // generated ethereal user
+        pass: process.env.PASSWORD, // generated ethereal password
 
     }
 }
@@ -52,7 +52,7 @@ export const registerMail = async (req, res) => {
     var emailBody = Mailgenerator.generate(email);
 
     let message = {
-        from: ENV.EMAIL,
+        from: process.env.EMAIL,
         to: userEmail,
         subject: subject || "Sign up succesful",
         html: emailBody
