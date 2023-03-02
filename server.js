@@ -22,7 +22,7 @@ const port = 8080;
 
 
 app.get('/', (req, res) => {
-    res.status(201).json("Home GET request")
+    res.status(201).json("Server is runninh")
 })
 
 /**api routes */
