@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import ENV from '../config.js'
+
 
 /**Auth middleware */
 export default async function Auth(req, res,next) {
