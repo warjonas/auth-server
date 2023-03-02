@@ -17,12 +17,12 @@ app.use(cors());
 app.use(morgan('tiny'));
 app.disable('x-powered-by'); //less hackers know about our stack
 
-const port = 8080;
+const port = process.env.PORT;
 
 
 
 app.get('/', (req, res) => {
-    res.status(201).json("Server is runninh")
+    res.status(201).json("Server is running")
 })
 
 /**api routes */
@@ -38,7 +38,7 @@ app.use(express.urlencoded({
 connect().then(() => {
     try {
         app.listen(port, () => {
-            console.log(`Server connected to http://localshost:${port}`
+            console.log(`Server connected`
             );
         })
     } catch (error) {
@@ -46,7 +46,7 @@ connect().then(() => {
         
     }
 }).catch(error => {
-    console.log('Invalid Databse connection')
+    console.log('Invalid Database connection')
 })
 
 
