@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 import Mailgen from 'mailgen';
+import * as dotenv from 'dotenv';
 
 
 //import Mail from 'nodemailer/lib/mailer';
